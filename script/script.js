@@ -54,11 +54,10 @@ const teamContainer = document.querySelector(".team-card");
                     <img src="${value.img}" class="img-fluid rounded-start" alt="Foto identificativa">
                   </div>
                   <div class="col-md-8">
-                    <div class="card-body">
                         <h5>${value.name}</h5>
                         <p>${value.role}</p>
                         <a href="mailto:${value.email}">${value.email}</a>
-                    </div>
+                        <i class="fa-solid fa-trash-can btn text-warning d-flex justify-content-end"></i> 
                   </div>
                 </div>
               </div>
@@ -88,3 +87,16 @@ function addMember(event) {
   teamMembers.push(newMember);
   createCard();
 }
+
+// const trashBtn = document.getElementById('trash');
+// trashBtn.addEventListener('click', deleteMember);
+
+//  function deleteMember(event){
+//    event.preventDefault();
+//    event.stopPropagation();
+   
+//    const cardToDelete = event.target.closest('.team-card');
+//    if (cardToDelete) {
+//      cardToDelete.remove();
+//    }
+// }

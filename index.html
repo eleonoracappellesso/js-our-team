@@ -35,21 +35,24 @@
                             <img src="img/male1.png" class="img-fluid rounded-start" alt="Foto identificativa">
                         </div>
                         <div class="col-md-8">
-                            <div class="card-body">
-                                <h5>MARCO BIANCHI</h5>
-                                <p>Designer</p>
-                                <a href="mailto:marcobianchi@team.com">marcobianchi@team.com</a>
-                            </div>
+                            <h5>MARCO BIANCHI</h5>
+                            <p>Designer</p>
+                            <a href="mailto:marcobianchi@team.com">marcobianchi@team.com</a>
+                            <i class="fa-solid fa-trash-can btn text-warning d-flex justify-content-end" id="trash" data-id="${index}"></i> 
                         </div>
-                    </div>
-                </div>
+                    </div> 
+                </div>          
             </div>
             <!-- creo un form per permettere di inserire i  dati di un nuovo membro-->
             <form id="addPerson" class="my-4">
-                <input type="text" name="name" id="name" placeholder="Inserisci nome e cognome" class="col-md-6 form-control my-3">
-                <input type="text" name="role" id="role" placeholder="Inserisci il ruolo" class="col-md-6 form-control my-3">
-                <input type="text" name="email" id="email" placeholder="Inserisci l'email" class="col-md-6 form-control my-3">
-                <input type="text" name="img" id="img" placeholder="Inserisci immagine identificativa" class="col-md-6 form-control my-3">
+                <input type="text" name="name" id="name" placeholder="Inserisci nome e cognome"
+                    class="col-md-6 form-control my-3" required>
+                <input type="text" name="role" id="role" placeholder="Inserisci il ruolo"
+                    class="col-md-6 form-control my-3" required>
+                <input type="text" name="email" id="email" placeholder="Inserisci l'email"
+                    class="col-md-6 form-control my-3" required>
+                <input type="text" name="img" id="img" placeholder="Inserisci immagine identificativa"
+                    class="col-md-6 form-control my-3" required>
                 <button type="submit" class="btn btn-outline-success">Aggiungi</button>
                 <button type="reset" class="btn btn-outline-danger">Annulla</button>
             </form>
