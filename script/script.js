@@ -41,14 +41,14 @@ const teamMembers = [
 ];
 
 
-function createCard(){
-let template = '';
-const teamContainer = document.querySelector(".team-card");
+function createCards() {
+  let template = '';
+  const teamContainer = document.querySelector(".team-card");
 
   for (let value of teamMembers) {
-  template += `
-            <div class="team-card">
-              <div class="card">
+    template += `
+            <div class="team-member col-12 col-sm-6 col-md-4 col-lg-4">
+              <div class="card m-3">
                 <div class="row g-0">
                   <div class="col-md-4">
                     <img src="${value.img}" class="img-fluid rounded-start" alt="Foto identificativa">
@@ -57,16 +57,18 @@ const teamContainer = document.querySelector(".team-card");
                         <h5>${value.name}</h5>
                         <p>${value.role}</p>
                         <a href="mailto:${value.email}">${value.email}</a>
-                        <i class="fa-solid fa-trash-can btn text-warning d-flex justify-content-end" id="trash"></i> 
+                        <i class="fa-solid fa-trash-can btn text-warning d-flex justify-content-end trash-member"></i> 
                   </div>
                 </div>
               </div>
             </div>`;
-}
+  }
 
-teamContainer.innerHTML = template;
+  teamContainer.innerHTML = template;
+
+  trashMembers();
 }
-createCard();
+createCards();
 
 const myForm = document.getElementById('addPerson');
 myForm.addEventListener('submit', addMember);
@@ -85,19 +87,27 @@ function addMember(event) {
   };
 
   teamMembers.push(newMember);
-  createCard();
+  createCards();
 }
 
+function trashMembers() {
+  
+  const trashBtns = document.querySelectorAll('.trash-member');
+  console.log(trashBtns.length);
+  for (let i = 0; i < trashBtns.length; i++) {
+    console.log('ciclo-' + i);
+    console.log(trashBtns[i]);
 
-const trashBtn = document.getElementById('trash');
-trashBtn.addEventListener('click', deleteMember);
+    trashBtns[i].addEventListener('click', deleteMember);
+  }
+}
 
- function deleteMember(event){
-   event.preventDefault();
-   event.stopPropagation();
-   
-   const cardToDelete = event.target.closest('.team-card');
-   if (cardToDelete) {
-     cardToDelete.remove();
-   }
+function deleteMember(event) {
+  event.preventDefault();
+  event.stopPropagation();
+
+  const cardToDelete = event.target.closest('.team-member');
+  if (cardToDelete) {
+    cardToDelete.remove();
+  }
 }
