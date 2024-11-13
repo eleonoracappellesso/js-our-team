@@ -1,0 +1,33 @@
+h1 {
+    color: #E53270;
+    font-family: "Sour Gummy", sans-serif;
+}
+
+.team-card {
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    line-height: 2;
+}
+
+.team-card img {
+    width: 130px;
+    height: 130px;
+    margin-right: 15px;
+}
+
+.team-card h5 {
+    font-weight: bold;
+    margin: 0;
+}
+
+.team-card p {
+    margin: 0;
+}
+
+.team-card a {
+    color: #00bfff;
+    text-decoration: none;
+}
