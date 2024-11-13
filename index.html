@@ -27,7 +27,7 @@
                 quis pariatur sapiente esse maiores in mollitia veniam vitae quisquam vel itaque? Eaque odit architecto
                 sint?
             </p>
-
+            <!-- creo un template per la card -->
             <div class="team-card">
                 <div class="card">
                     <div class="row g-0">
@@ -44,6 +44,15 @@
                     </div>
                 </div>
             </div>
+            <!-- creo un form per permettere di inserire i  dati di un nuovo membro-->
+            <form id="addPerson" class="my-4">
+                <input type="text" name="name" id="name" placeholder="Inserisci nome e cognome" class="col-md-6 form-control my-3">
+                <input type="text" name="role" id="role" placeholder="Inserisci il ruolo" class="col-md-6 form-control my-3">
+                <input type="text" name="email" id="email" placeholder="Inserisci l'email" class="col-md-6 form-control my-3">
+                <input type="text" name="img" id="img" placeholder="Inserisci immagine identificativa" class="col-md-6 form-control my-3">
+                <button type="submit" class="btn btn-outline-success">Aggiungi</button>
+                <button type="reset" class="btn btn-outline-danger">Annulla</button>
+            </form>
         </section>
 
     </main>

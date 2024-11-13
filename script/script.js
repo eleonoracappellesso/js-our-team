@@ -41,10 +41,11 @@ const teamMembers = [
 ];
 
 
+function createCard(){
 let template = '';
 const teamContainer = document.querySelector(".team-card");
 
-for (let value of teamMembers) {
+  for (let value of teamMembers) {
   template += `
             <div class="team-card">
               <div class="card">
@@ -63,6 +64,27 @@ for (let value of teamMembers) {
               </div>
             </div>`;
 }
+
 teamContainer.innerHTML = template;
+}
+createCard();
 
+const myForm = document.getElementById('addPerson');
+myForm.addEventListener('submit', addMember);
 
+function addMember(event) {
+  event.preventDefault();
+  event.stopPropagation();
+
+  const name = document.getElementById('name').value;
+  const role = document.getElementById('role').value;
+  const email = document.getElementById('email').value;
+  const img = document.getElementById('img').value;
+
+  const newMember = {
+    name, role, email, img
+  };
+
+  teamMembers.push(newMember);
+  createCard();
+}
