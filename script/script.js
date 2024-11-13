@@ -57,7 +57,7 @@ const teamContainer = document.querySelector(".team-card");
                         <h5>${value.name}</h5>
                         <p>${value.role}</p>
                         <a href="mailto:${value.email}">${value.email}</a>
-                        <i class="fa-solid fa-trash-can btn text-warning d-flex justify-content-end"></i> 
+                        <i class="fa-solid fa-trash-can btn text-warning d-flex justify-content-end" id="trash"></i> 
                   </div>
                 </div>
               </div>
@@ -88,15 +88,16 @@ function addMember(event) {
   createCard();
 }
 
-// const trashBtn = document.getElementById('trash');
-// trashBtn.addEventListener('click', deleteMember);
 
-//  function deleteMember(event){
-//    event.preventDefault();
-//    event.stopPropagation();
+const trashBtn = document.getElementById('trash');
+trashBtn.addEventListener('click', deleteMember);
+
+ function deleteMember(event){
+   event.preventDefault();
+   event.stopPropagation();
    
-//    const cardToDelete = event.target.closest('.team-card');
-//    if (cardToDelete) {
-//      cardToDelete.remove();
-//    }
-// }
+   const cardToDelete = event.target.closest('.team-card');
+   if (cardToDelete) {
+     cardToDelete.remove();
+   }
+}
