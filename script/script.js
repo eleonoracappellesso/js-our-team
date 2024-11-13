@@ -1,3 +1,6 @@
+"use strict";
+console.clear();
+
 const teamMembers = [
   {
     name: "Marco Bianchi",
@@ -36,3 +39,30 @@ const teamMembers = [
     img: "img/female3.png"
   }
 ];
+
+
+let template = '';
+const teamContainer = document.querySelector(".team-card");
+
+for (let value of teamMembers) {
+  template += `
+            <div class="team-card">
+              <div class="card">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="${value.img}" class="img-fluid rounded-start" alt="Foto identificativa">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                        <h5>${value.name}</h5>
+                        <p>${value.role}</p>
+                        <a href="mailto:${value.email}">${value.email}</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>`;
+}
+teamContainer.innerHTML = template;
+
+
