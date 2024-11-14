@@ -3,6 +3,11 @@ h1 {
     font-family: "Sour Gummy", sans-serif;
 }
 
+h3{
+    color: #E53270;
+    font-family: "Sour Gummy", sans-serif;
+}
+
 .team-card {
     display: flex;
     flex-wrap: wrap;
@@ -21,3 +26,6 @@ h1 {
     padding-right: 15px;
 }
 
+i{
+    cursor: pointer;
+}
